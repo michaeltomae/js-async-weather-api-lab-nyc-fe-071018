@@ -9,6 +9,8 @@ function handleFormSubmit(event) {
   fetch('http://api.openweathermap.org/data/2.5/weather?q=' + value + `&APPID=${API_KEY}&units=imperial`)
     .then(response => response.json())
     .then(responseJSON => displayCurrentWeather(responseJSON))
+
+  fetchFiveDayForecast(value)
 }
 
 function fetchCurrentWeather(city) {
