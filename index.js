@@ -50,7 +50,11 @@ function displayFiveDayForecast(json) {
   console.log(json)
   const forecast = json.listenerforecast.forEach((eachForecastItem) => {
     const div = document.createElement('div')
-    div.innerHTML = '<p></p><p></p><p></p>'
+    eachForecastItem.dt_text
+    div.innerHTML = `
+    <p>${eachForecastItem.dt_text}</p>
+    <p></p>
+    <p></p>`
   })
 }
 
