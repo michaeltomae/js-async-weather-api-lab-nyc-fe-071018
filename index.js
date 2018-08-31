@@ -58,6 +58,7 @@ function displayFiveDayForecast(json) {
     lowAverageTemp += eachForecastItem.main.temp_min
     highAverageTemp += eachForecastItem.main.temp_max
     if (counter === 8) {
+    counter = 0
     const div = document.createElement('div')
     div.innerHTML = `<p>${eachForecastItem.dt_txt}</p>
     <p>${lowAverageTemp/8}</p>
