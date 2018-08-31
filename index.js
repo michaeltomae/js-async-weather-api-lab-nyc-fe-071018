@@ -51,14 +51,19 @@ function displayFiveDayForecast(json) {
   const forecast = json.list
   const aside = document.querySelector('aside')
   const counter = 0
-  const averageTemp = 0
+  const lowAverageTemp = 0
+  const highAverageTemp = 0
   forecast.forEach((eachForecastItem) => {
+    counter++
+    lowAverageTemp += eachForecastItem.main.temp_min
+    highAverageTemp += eachForecastItem.main.temp_max
+    if (counter === 8) {
     const div = document.createElement('div')
-    div.innerHTML = `
-    <p>${eachForecastItem.dt_txt}</p>
-    <p>${eachForecastItem.dt_temp_min}</p>
-    <p>${eachForecastItem.dt_temp_max}</p>`
-  })
+    div.innerHTML = `<p>${eachForecastItem.dt_txt}</p>
+    <p>${lowAverageTemp/8}</p>
+    <p>${highAverageTemp/8}</p>`
+    }
+    })
 }
 
 function createChart(json) {
