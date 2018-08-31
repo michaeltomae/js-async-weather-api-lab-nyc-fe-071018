@@ -50,9 +50,10 @@ function displayFiveDayForecast(json) {
   console.log(json)
   const forecast = json.list
   const aside = document.querySelector('aside')
+  const counter = 0
+  const averageTemp = 0
   forecast.forEach((eachForecastItem) => {
     const div = document.createElement('div')
-    eachForecastItem.dt_text
     div.innerHTML = `
     <p>${eachForecastItem.dt_txt}</p>
     <p>${eachForecastItem.dt_temp_min}</p>
