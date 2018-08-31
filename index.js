@@ -54,7 +54,7 @@ function displayFiveDayForecast(json) {
     const div = document.createElement('div')
     eachForecastItem.dt_text
     div.innerHTML = `
-    <p>${eachForecastItem.dt_text}</p>
+    <p>${eachForecastItem.dt_txt}</p>
     <p>${eachForecastItem.dt_temp_min}</p>
     <p>${eachForecastItem.dt_temp_max}</p>`
   })
