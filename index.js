@@ -61,8 +61,8 @@ function displayFiveDayForecast(json) {
     counter = 0
     const div = document.createElement('div')
     div.innerHTML = `<p>${eachForecastItem.dt_txt}</p>
-    <p>${lowAverageTemp/8}</p>
-    <p>${highAverageTemp/8}</p>`
+    <p>${Math.floor(lowAverageTemp/8)}</p>
+    <p>${Math.floor(highAverageTemp/8)}</p>`
     lowAverageTemp = 0
     highAverageTemp = 0
     aside.appendChild(div)
